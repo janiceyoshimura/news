@@ -22,20 +22,14 @@
   </head>
   <body>
 
-    <div class="page-header container mt-5">
-      <h1 class="title">The News</h1>
-      <p class = "directions">Enter a location below to see the latest news and weather</p>
-    </div>
-
-    <div class = "container mt-5">
-      
-      <div class = "input">
-      <form action="/newspaper">
-        <label for="location">Location:</label>
-        <input type="text" name="q">
-        <button type="submit">Submit</submit>
-      </form>
-      </div>
+    <div class="container mt-5">
+     <h1 class="title"> The latest in <%= params["q"] %> </h1>
+     <h2 class = "weather"> <%= @weather %> </h2>
+     
+    #  for headline in 
+     <h2 class = "subtext"> <a href="<%= @news_url %>" > <%= @headline %> </a> </h2>
+       <br>
+       <a href="/" class="btn btn-primary">Search again</a>
     </div>
 
 

@@ -1,0 +1,39 @@
+h1 {
+}
+
+.title {
+    text-align: center;
+    color: rgb(16, 17, 82);
+}
+
+h2 {
+}
+
+.subtext {
+    text-align: center;
+    color: grey;
+}
+
+.weather {
+  text-align: center;
+  color: rgb(62, 60, 71);
+  font-size: 28px
+}
+
+p {
+
+}
+
+.directions {
+  color: grey; 
+  text-align: center;
+}
+
+.input {
+  display: inline-block;
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  /* top: 50%; */
+  transform: translate(-50%, -50%);
+}
