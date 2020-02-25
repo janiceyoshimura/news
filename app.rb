@@ -19,12 +19,13 @@ get "/newspaper" do
   # do everything else
    results = Geocoder.search(params["q"])
     lat_long = results.first.coordinates # => [lat, long]
-    forecast = ForecastIO.forecast("#{lat_long[0]}","#{lat_long[1]}").to_hash
+    @forecast = ForecastIO.forecast("#{lat_long[0]}","#{lat_long[1]}").to_hash
     "#{lat_long[0]} #{lat_long[1]}"
     # test_location = "Chicago"
     
-    current_temperature = forecast["currently"]["temperature"]
-    conditions = forecast["currently"]["summary"]
+    current_temperature = @forecast["currently"]["temperature"]
+    conditions = @forecast["currently"]["summary"]
+    @daily_forecast = @forecast["daily"]["data"]
     
     # NEWS API key
     url = "https://newsapi.org/v2/everything?q=#{params["q"]}&apiKey=eedac788ec124d788356e21b5043edbb"
@@ -36,12 +37,9 @@ get "/newspaper" do
     @headline = @news["articles"][0]["title"]
     @weather = "In #{params["q"]}, it is #{current_temperature} degrees and #{conditions.downcase}"
     @news_url = @news["articles"][0]["url"]
-
-    # @all_news
-    # for line in @news["articles"] 
-    #   "#{line["title"]}" 
-    #   "#{line["url"]}" 
-    # end
+    
+    @weather_forecast = 
+    
 
     view "news"
 

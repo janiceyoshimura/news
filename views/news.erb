@@ -24,23 +24,42 @@
 
 <div class="jumbotron center">
   <h1 class="title center"> The latest in <%= params["q"] %> </h1>
+  </div>
     <div class = "container md-6">
     <hr class="my-4">
-        <h2 class = "center weather"> Weather </h2>
-         <p class="lead center weather"> <%= @weather %></p>
+        <h2 class = "center weather"> Weather Now </h2>
+         <p class="lead center weather"> <%= @weather %></p> 
+         <br>
+         <h2 class = "center forecast"> Daily Weather Forecast </h2>
+    
+         <p class="lead center "> 
+            <% for day in @daily_forecast %>
+             <br>
+             <%= day["summary"]%> 
+            <br>
+            A high of <%= day["temperatureHigh"] %> and a low of <%= day["temperatureLow"] %> 
+            <br><br>
+            <% end %>
+         </p>
     </div>
 </div>
 
- <div class= "container md-9">
+ <div class= "container md-6">
     <h2 class ="center weather"> THE HAPPENINGS  </h2>
        <hr class="my-4">
  </div>
-     
-   <!--  <p> <%= @all_news %> </p> -->
-
-    <h2 class = "subtext"> <a href="<%= @news_url %>" > <%= @headline %> </a> </h2>
+   
+ 
+ <div class= "container md-6">
+    <% for line in @news["articles"] %>
+           <h4>
+            <a href="<%= @news_url %>" > <%= line["title"]%> 
+            </h4>
+            <br>
+            <% end %>
+ </div>
       
-    <div class= "container md-9">
+    <div class= "container md-6">
     <br><br><br>
        <a href="/" class="btn btn-primary input">Search again</a>
        <br> <br> <br>

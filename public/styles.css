@@ -4,7 +4,6 @@ h1 {
 .title {
     text-align: center;
     color: rgb(16, 17, 82);
-    background-color: ivory;
     padding-top: 20px;
 }
 
@@ -15,11 +14,12 @@ h2 {
 .subtext {
     text-align: center;
     color: grey;
+    font-size: 22px;
 }
 
-.weather {
-    text-align: center;
-    color: grey;
+.forecast {
+  text-align: center;
+  color: rgb(62, 60, 71);
 }
 
 .weather {
@@ -47,7 +47,8 @@ p {
 }
 
 .form {
-    background-color: darkgray;
+    font-size: 22px;
+    text-align: center;
 }
 
 .blue {
