@@ -4,9 +4,12 @@ h1 {
 .title {
     text-align: center;
     color: rgb(16, 17, 82);
+    background-color: ivory;
+    padding-top: 20px;
 }
 
 h2 {
+    text-align: center;
 }
 
 .subtext {
@@ -15,13 +18,18 @@ h2 {
 }
 
 .weather {
+    text-align: center;
+    color: grey;
+}
+
+.weather {
   text-align: center;
   color: rgb(62, 60, 71);
-  font-size: 28px
+  font-size: 30px
 }
 
 p {
-
+ text-align: center;
 }
 
 .directions {
@@ -36,4 +44,28 @@ p {
   left: 50%;
   /* top: 50%; */
   transform: translate(-50%, -50%);
+}
+
+.form {
+    background-color: darkgray;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.center {
+    text-align: center;
+}
+
+.jumbotron {
+
+}
+
+.city {
+    background-color: ivory
+}
+
+.center {
+    text-align: center;
 }

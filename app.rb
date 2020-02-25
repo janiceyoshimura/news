@@ -29,19 +29,19 @@ get "/newspaper" do
     # NEWS API key
     url = "https://newsapi.org/v2/everything?q=#{params["q"]}&apiKey=eedac788ec124d788356e21b5043edbb"
     # url = "https://newsapi.org/v2/everything?q=Chicago&apiKey=eedac788ec124d788356e21b5043edbb"
-    news = HTTParty.get(url).parsed_response.to_hash
+    @news = HTTParty.get(url).parsed_response.to_hash
     req = open(url)
     response_body = req.read
 
-    @headline = news["articles"][0]["title"]
+    @headline = @news["articles"][0]["title"]
     @weather = "In #{params["q"]}, it is #{current_temperature} degrees and #{conditions.downcase}"
-    @news_url = news["articles"][0]["url"]
+    @news_url = @news["articles"][0]["url"]
 
-    # Need to fix the for loop
-    @all = 
-    for line in news["articles"]
-        puts "#{line["title"]}"
-     end
+    # @all_news
+    # for line in @news["articles"] 
+    #   "#{line["title"]}" 
+    #   "#{line["url"]}" 
+    # end
 
     view "news"
 

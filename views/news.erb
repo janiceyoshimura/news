@@ -22,14 +22,28 @@
   </head>
   <body>
 
-    <div class="container mt-5">
-     <h1 class="title"> The latest in <%= params["q"] %> </h1>
-     <h2 class = "weather"> <%= @weather %> </h2>
+<div class="jumbotron center">
+  <h1 class="title center"> The latest in <%= params["q"] %> </h1>
+    <div class = "container md-6">
+    <hr class="my-4">
+        <h2 class = "center weather"> Weather </h2>
+         <p class="lead center weather"> <%= @weather %></p>
+    </div>
+</div>
+
+ <div class= "container md-9">
+    <h2 class ="center weather"> THE HAPPENINGS  </h2>
+       <hr class="my-4">
+ </div>
      
-    #  for headline in 
-     <h2 class = "subtext"> <a href="<%= @news_url %>" > <%= @headline %> </a> </h2>
-       <br>
-       <a href="/" class="btn btn-primary">Search again</a>
+   <!--  <p> <%= @all_news %> </p> -->
+
+    <h2 class = "subtext"> <a href="<%= @news_url %>" > <%= @headline %> </a> </h2>
+      
+    <div class= "container md-9">
+    <br><br><br>
+       <a href="/" class="btn btn-primary input">Search again</a>
+       <br> <br> <br>
     </div>
 
 
